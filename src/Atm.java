@@ -45,7 +45,12 @@ public class Atm {
                 break;
             }
             else {
-                System.out.println("Hatalı giriş yaptınız, kalan hakkınız: " + --kalanHak);
+                if (kalanHak == 0) {
+                    System.out.println("Hesabınız bloke olmuştur lütfen banka ile iletişime geçiniz.");
+                }
+                else {
+                    System.out.println("Hatalı giriş yaptınız, kalan hakkınız: " + --kalanHak);
+                }
             }
         }
     }
