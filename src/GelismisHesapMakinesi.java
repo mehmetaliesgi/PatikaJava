@@ -7,7 +7,7 @@ public class GelismisHesapMakinesi {
 
         Scanner scanner = new Scanner(System.in);
 
-        String menu = "1- Toplama İşlemi\n2- Çıkarma İşlemi\n3- Çarpma İşlemi\n4- Bölme İşlmei\n5- Üslü Sayı Hesaplama\n6- Mod Alma\n7- Dikdörtgen Alan ve Çevre Hesabı\n0- Çıkış Yap";
+        String menu = "1- Toplama İşlemi\n2- Çıkarma İşlemi\n3- Çarpma İşlemi\n4- Bölme İşlmei\n5- Üslü Sayı Hesaplama\n6- Mod Alma\n7- Dikdörtgen Çevre Hesabı\n8- Dikdörtgen Alan Hesabı\n0- Çıkış Yap";
 
         while (true) {
             System.out.println(menu);
@@ -41,7 +41,7 @@ public class GelismisHesapMakinesi {
                     }
                     break;
                 case 5:
-                    System.out.println("Çarpma İşlemi Sonuncu: " + power(a, b));
+                    System.out.println("Üs Alma İşlemi Sonuncu: " + power(a, b));
                     break;
                 case 6:
                     System.out.println("Mod İşlemi Sonucu: " + mod(a, b));
@@ -83,12 +83,19 @@ public class GelismisHesapMakinesi {
     }
 
     public static int power(int x, int y) {
-        int result;
-        if (x == 0 || y == 0) {
-            return 0;
+        int result = 1;
+        if (x == 0) {
+            result = 0;
+            return result;
+        }
+        else if (y == 0) {
+            result = 1;
+            return result;
         }
         else {
-            result = x * y;
+            for (int i = 1; i <= y; i++) {
+                result *= x;
+            }
         }
         return result;
     }
